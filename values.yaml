@@ -1,0 +1,27 @@
+mysql:
+  mysqlDatabase: employeedb
+  mysqlRootPassword: password
+  persistence:
+    enabled: false
+ 
+redis:
+  usePassword: false
+  cluster:
+    enabled: false
+  master:
+    persistence:
+      enabled: false
+ 
+labels:
+  app.kubernetes.io/name: app
+  app.kubernetes.io/instance: goweb-app
+  app.kubernetes.io/version: "1.16.0"
+ 
+matchLabels:
+  app.kubernetes.io/name: app
+  app.kubernetes.io/instance: goweb-app
+ 
+containers:
+  name: goweb-app
+  image: sangwan70/ts-go-webapp
+  tag: "v1"
